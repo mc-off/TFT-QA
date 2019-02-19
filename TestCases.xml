@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite>
+	<id>S2</id>
+	<name>Master</name>
+	<description></description>
+	<sections>
+		<section>
+		<name>OrderForm</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Fields</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C11</id>
+				<title>Click on the field</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Critical</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<steps>Click on the field</steps>
+										<expected>Appearance of the cursor in the field</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C7</id>
+				<title>Typing</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>Critical</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C7]
+</preconds>
+										<steps>1. Click on the field.
+2. Start typing
+</steps>
+										<expected>|||:Input:|:Expected result:
+|| Городец |  Городец
+|| Владикавказ | Владикавказ
+|| 1337 |  1337
+|| $ |  $</expected>
+									</custom>
+							</case>
+								</cases>
+								<sections>
+		<section>
+		<name>&quot;Ваш город или регион*&quot;</name>
+		<description>Field for choosing consumer region</description>
+						
+		<cases>
+									
+						<case>
+				<id>C3</id>
+				<title>Appearance of search results</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>Critical</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C7]</preconds>
+										<steps>1. Click on the field.
+2. Type city/region or anything else</steps>
+										<expected>|||:Input:|:Expected result:
+|| деревня Ковернино|  Нижегородская область, Сокольский район, деревня Ковернино
+|| село Стригино| Владимирская обл, Муромский р-н, село Стригино
+|| 1337 |  
+|| $ |  
+</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C8</id>
+				<title>Choosing the variant</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>Critical</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C8]</preconds>
+										<steps>1.Click on the field.
+2.Type city/region or anything else
+3. Choosing element from the list </steps>
+										<expected>|||:Input:|:Expected result:
+|| Городец |  Нижегородская область
+|| Владикавказ | Республика Северная Осетия - Алания
+|| 1337 |  
+|| $ |  </expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C9</id>
+				<title>Converting foreign symbols to Cyrillic</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C7]</preconds>
+										<steps>1. Click on the field 
+2. Typing something</steps>
+										<expected>|||:Input:|:Expected result:
+|| Ujhjltw|  Городец
+|| Dkflbrfdrfp| Владикавказ
+|| ntcn|  тест
+|| Abynt[|  Финтех</expected>
+									</custom>
+							</case>
+								</cases>
+								<sections>
+		<section>
+		<name>Clear button</name>
+		<description>Button in the right part of filed for one-click cleaning th field</description>
+						
+		<cases>
+									
+						<case>
+				<id>C10</id>
+				<title>Appearance of the button</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C11]</preconds>
+										<steps>Clicking the field </steps>
+										<expected>Button appearance </expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C5</id>
+				<title>Clearing</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C10]</preconds>
+										<steps>1. Click the button</steps>
+										<expected>1. Field is empty</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Hints</name>
+		<description>Useful tips for users for errors</description>
+						
+		<cases>
+									
+						<case>
+				<id>C6</id>
+				<title>Hint &quot;Invalid region&quot;</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C8]</preconds>
+										<steps>1. Provoke an error (Ivalid region)</steps>
+										<expected>|||:Input:|:Expected result:
+|| Городец |  Nothing
+|| Владикавказ | Nothing
+|| 1337 |  Appearance of hint under input field &quot;Введите другой регион&quot;
+|| $ |  Appearance of hint under input field &quot;Введите другой регион&quot;</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+	</sections>
+			</section>
+			<section>
+		<name>&quot;Фамилия, имя и отчество*&quot;</name>
+		<description>Field for typing user&apos;s full name</description>
+						
+		<cases>
+									
+						<case>
+				<id>C13</id>
+				<title>Appearance of search results</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>Critical</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C7]</preconds>
+										<steps>1. Click on the field.
+2. Type city/region or anything else</steps>
+										<expected>|||:Input:|:Expected result:
+|| деревня Ковернино|  Нижегородская область, Сокольский район, деревня Ковернино
+|| село Стригино| Владимирская обл, Муромский р-н, село Стригино
+|| 1337 |  Nothing
+|| $ |  Nothing
+</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C15</id>
+				<title>Converting foreign symbols to Cyrillic</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C7]</preconds>
+										<steps>1. Click on the field 
+2. Typing something</steps>
+										<expected>|||:Input:|:Expected result:
+|| Ujhjltw|  Городец
+|| Dkflbrfdrfp| Владикавказ
+|| ntcn|  тест
+|| Abynt[|  Финтех</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C19</id>
+				<title>The presence of a minimum number of words</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C7]</preconds>
+										<steps>1. Click on the field
+2. Type some text in the field</steps>
+										<expected>if number of words less than 2, it&apos;s error
+|||:Input:|:Expected result:
+|| Сидоров|  error
+|| Иван|  error
+|| Сидоров Иван| nothing
+|| Сидоров Иван Евгеньевич|  nothing
+|| Сидоров-Корсаков Иван Евгеньевич|  nothing
+|| Сидоров Корсаков Иван Евгеньевич|  nothing</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C20</id>
+				<title>The presence of incorrect characters in the words</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C7]
+If there is incorrect symbol  - error 
+Incorrect symbol - everything, except Cyrillic and hyphen
+3 equivalence classes - symbols, numbers, signs</preconds>
+										<steps>1. Click on the field
+2. Print in the field some words </steps>
+										<expected>|||:Input:|:Expected result:
+|| Иванови4|  error
+|| Иван_ович|  error
+|| $ергей|  error
+|| Артём|  nothing</expected>
+									</custom>
+							</case>
+								</cases>
+								<sections>
+		<section>
+		<name>Clear button</name>
+		<description>Button in the right part of the field for one-click cleaning</description>
+						
+		<cases>
+									
+						<case>
+				<id>C17</id>
+				<title>Appearance of the button</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C11]</preconds>
+										<steps>Clicking the field </steps>
+										<expected>Button appearance </expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C18</id>
+				<title>Clearing</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C17]</preconds>
+										<steps>1. Click the button</steps>
+										<expected>1. Field is empty</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Hints</name>
+		<description>Useful tips for users for error cases</description>
+						
+		<cases>
+									
+						<case>
+				<id>C16</id>
+				<title>Hint &quot;Invalid symbols&quot;</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C20]</preconds>
+										<steps>1. Provoke an error (Ivalid symbol)</steps>
+										<expected>|||:Input:|:Expected result:
+|| Иванови4|   Show a hint under the field &quot;Допустимо использовать только буквы русского алфавита и дефис&quot;
+|| Иван_ович|  Show a hint under the field &quot;Допустимо использовать только буквы русского алфавита и дефис&quot;
+|| $ергей|  Show a hint under the field &quot;Допустимо использовать только буквы русского алфавита и дефис&quot;
+|| Артём|  nothing</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C21</id>
+				<title>Hint &quot;Insufficient number of words&quot;</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C19]</preconds>
+										<steps>1. Provoke an error (Insufficient number of words)</steps>
+										<expected>|||:Input:|:Expected result:
+|| Иванов|   Show a hint under the field &quot;Недостаточно информации. Введите фамилию, имя и отчество через пробел (Например: Иванов Иван Алексеевич)&quot;
+|| Артём|  Show a hint under the field &quot;Недостаточно информации. Введите фамилию, имя и отчество через пробел (Например: Иванов Иван Алексеевич)&quot;
+|| Сергеев Артём|  nothing
+|| Сергеев Артём Иванович|  nothing</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+	</sections>
+			</section>
+			<section>
+		<name>&quot;Контактный телефон*&quot;</name>
+		<description>A field for input an user&apos;s phone number.</description>
+						
+		<cases>
+									
+						<case>
+				<id>C25</id>
+				<title>Only number input</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>Critical</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C7]
+</preconds>
+										<steps>1. Click on the field 
+2.Start printing</steps>
+										<expected>If symbol not a number - don&apos;t put them into the field 
+3 equivalence classes - symbols, symbols, signs
+|||:Input:|:Expected result:
+|| 9аа|  9
+|| фф9аа|  9
+|| ааа| 
+|| 1337 |  1337
+|| $ |  </expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C27</id>
+				<title>First phone number numeric</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>Critical</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C25]</preconds>
+										<steps>1. Click on the field 
+2.Start printing</steps>
+										<expected>If first number not a 9- it&apos;s error 
+|||:Input:|:Expected result:
+|| 9211234567|  
+|| 0211234567|  error</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C22</id>
+				<title>The presence of a maximum number of numbers</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C25]</preconds>
+										<steps>1. Click on the field
+2. Type numbers in the field</steps>
+										<expected>if number of numbers more than 10, don&apos;t put them into the field 
+|||:Input:|:Expected result:
+|| 9054567891|  9054567891
+|| 905|  905
+|| 9054567891123| 9054567891
+|| 1239054567891| 1239054567</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C26</id>
+				<title>The presence of a minimum number of numbers</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C25]</preconds>
+										<steps>1. Click on the field
+2. Type numbers in the field</steps>
+										<expected>if number of numbers less than 10, it&apos;s error
+2 boundary values - 1000000000 and 9999999999
+|||:Input:|:Expected result:
+|| 1000000000 |  
+|| 999999999| error
+|| 1000000001 |  
+|| 9999999999| 
+|| 9999999998| 
+|| 10000000000 | error</expected>
+									</custom>
+							</case>
+								</cases>
+								<sections>
+		<section>
+		<name>Clear button</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C23</id>
+				<title>Appearance of the button</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C11]</preconds>
+										<steps>Clicking the field </steps>
+										<expected>Button appearance </expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C24</id>
+				<title>Clearing</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C23]</preconds>
+										<steps>1. Click the button</steps>
+										<expected>1. Field is empty</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Hints</name>
+		<description>Useful tips for users for error cases</description>
+						
+		<cases>
+									
+						<case>
+				<id>C28</id>
+				<title>Hint &quot;Empty field&quot;</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>&quot;Контактный телефон*&quot; field is empty</preconds>
+										<steps>1. Provoke an error (Empty field)</steps>
+										<expected>Show a hint under the field &quot;Необходимо указать номер телефона&quot;
+</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C29</id>
+				<title>Hint &quot;Invalid number&quot;</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C26] </preconds>
+										<steps>1. Provoke an error (number of numbers less than 10)</steps>
+										<expected>Show a hint under the field &quot;Номер телефона должен состоять из 10 цифр, начиная с кода оператора&quot;
+</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C33</id>
+				<title>Hint &quot;Invalid first numeric&quot;</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C27]</preconds>
+										<steps>1. Provoke an error (invalid first numeric)</steps>
+										<expected>Show a hint under the field &quot;Код оператора должен начинаться с цифры 9&quot;
+</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+	</sections>
+			</section>
+			<section>
+		<name>&quot;Электронная почта&quot;</name>
+		<description>Field for input users e-mail (optional)</description>
+						
+		<cases>
+									
+						<case>
+				<id>C32</id>
+				<title>Correct e-mail</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C7]
+3 equivalence classes - symbols(SY), numbers(N), signs(SI)(&apos;-&apos;,&apos;_&apos;),other signs(OSI)
+SY - only include latin symols - from &apos;a&apos; to &apos;z&apos; and  from &apos;A&apos; to &apos;Z&apos;
+E-mail must inlcude 3 paths - before &apos;@&apos;, after &apos;@&apos; and before &apos;.&apos;,ater &apos;.&apos;
+&apos;@&apos; and &apos;.&apos; must be in it
+First path can cosnist of SY,N and SI
+Secont path must include only SY
+Third path - only SY
+
+We use the table of values and test only pairs
+|||:First path:|:Second path:|:Third path:|:Expected result:
+|| 1| 1|0|0
+|| 1| 0|1|0
+|| 0| 1|1|0
+|| 1| 1|1|1
+</preconds>
+										<steps>1. Click on the field 
+2.Start printing</steps>
+										<expected>|||:First path:|:Second path:|:Third path:|:Expected result:
+|| aa| @mail||error
+|| aa| @mail|.|error
+|| aa| @mail|.11|error
+|| aa| @mail|.-|error
+|| aa| @mail|.фф|error
+|| aa| |.ru|error
+|| aa| @|.ru|error
+|| aa| @11|.ru|error
+|| aal| @-|.ru|error
+|| aa| @фф|.ru|error
+|| фф|@mai|.ru|error 
+|| aa|@mai|.ru|
+|| 11|@mai|.ru|
+|| _|@mai|.ru|
+</expected>
+									</custom>
+							</case>
+								</cases>
+								<sections>
+		<section>
+		<name>Hints</name>
+		<description>Useful tips for users for error cases</description>
+						
+		<cases>
+									
+						<case>
+				<id>C34</id>
+				<title>Hint &quot;Invalid e-mail&quot;</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C32]</preconds>
+										<steps>1. Provoke an error (invalid e-mail)</steps>
+										<expected>Show a hint under the field &quot;Введите корректный адрес эл. почты&quot;
+</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+	</sections>
+			</section>
+			<section>
+		<name>&quot;Гражданство&quot;</name>
+		<description>Sheet for choosing Russian citizenship</description>
+						
+		<cases>
+									
+						<case>
+				<id>C35</id>
+				<title>Opening the sheet</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>Critical</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C11]</preconds>
+										<steps>1. Click on the field</steps>
+										<expected>1. Open the shhet with two variants for choose (&quot;Yes&quot; or &quot;No&quot;)</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C37</id>
+				<title>Choosing variant</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C35]</preconds>
+										<steps>1. Click the field 
+2. Click on the variant</steps>
+										<expected>Fill the field with choosen variant</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>&quot;Укажите страну*&quot;</name>
+		<description>Field for choosing user&apos;s citizenship. Initially invisible.</description>
+						
+		<cases>
+									
+						<case>
+				<id>C36</id>
+				<title>Appearance of a field &quot;Выберите гражданство&quot; (Choose your citizenship)</title>
+												<template>Test Case (Text)</template>
+																<type>Accessibility</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C37]</preconds>
+										<steps>1. Click the field 
+2. Choose &quot;Нет, не имею гражданства РФ&quot;</steps>
+										<expected>Field appearance </expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C38</id>
+				<title>Appearance of search results</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>Critical</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C7][C36]</preconds>
+										<steps>1. Click on the field.
+2. Type </steps>
+										<expected>|||:Input:|:Expected result:
+|| УКРАИН|  УКРАИНА
+|| УКРАИНА| УКРАИНА (does not work on the site)
+|| 1337 |  
+|| $ |  
+</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C39</id>
+				<title>Choosing the variant</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>Critical</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C38]</preconds>
+										<steps>1.Click on the field.
+2.Type country
+3. Choosing element from the list </steps>
+										<expected>|||:Input:|:Expected result:
+|| БЕЛАРУСЬ|  БЕЛАРУСЬ
+</expected>
+									</custom>
+							</case>
+								</cases>
+								<sections>
+		<section>
+		<name>Hints</name>
+		<description>Useful tips for users for errors</description>
+						
+		<cases>
+									
+						<case>
+				<id>C41</id>
+				<title>Hint &quot;Empty field&quot;</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>&quot;Укажите страну*&quot; field is empty</preconds>
+										<steps>Provoke an error (Empty field)</steps>
+										<expected>Show a hint under the field &quot;Выберите страну из выпадающего списка&quot;
+</expected>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C40</id>
+				<title>Hint &quot;Invalid region&quot;</title>
+												<template>Test Case (Text)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C8]</preconds>
+										<steps>1. Provoke an error (Ivalid country)</steps>
+										<expected>|||:Input:|:Expected result:
+|| БЕЛАРУСЬ|  
+|| УКРАИНА| 
+|| фф|  Appearance of hint under input field &quot;Выберите страну из выпадающего списка&quot;
+|| 1337 |  Appearance of hint under input field &quot;Выберите страну из выпадающего списка&quot;
+|| $ |  Appearance of hint under input field &quot;Выберите страну из выпадающего списка&quot;</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+	</sections>
+			</section>
+	</sections>
+			</section>
+			<section>
+		<name>Flags</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C42</id>
+				<title>Flag field click</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<steps>1. Click on the flag field </steps>
+										<expected>Set bool opposite flag meaning 
+|||:Input:|:Expected result:
+|| false|  true
+|| true| false</expected>
+									</custom>
+							</case>
+								</cases>
+								<sections>
+		<section>
+		<name>&quot;Условия передачи информации&quot;</name>
+		<description>Flag for accepting information transfer conditions</description>
+						
+		<cases>
+									
+						<case>
+				<id>C43</id>
+				<title>Appearance of information transfer conditions</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>High</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<steps>1. Click on the &quot;условия передачи информации&quot;</steps>
+										<expected>Show sheet with data transfer conditions</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+	</sections>
+			</section>
+			<section>
+		<name>Buttons</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>&quot;Оставить заявку&quot;</name>
+		<description>Button to send an application</description>
+						
+		<cases>
+									
+						<case>
+				<id>C44</id>
+				<title>Button click</title>
+												<template>Test Case (Text)</template>
+																<type>Functional</type>
+																<priority>Critical</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>[C6] [C16] [C21] [C28] [C29] [C33] [C34] [C40] [C41]</preconds>
+										<steps>1. Fill fileds in the form
+2. Click to the button</steps>
+										<expected>If any filed with * has an error and flag -  false, - do nothing
+Else send data to server and show message to user &quot;Готово&quot;
+1 - error or flag false
+0 - no error and flag true
+|||:Geolocation:|:Full name:|:Phone:|:E-mail:|:Country:|:Flag:|:Expected result:
+||1|0|0|0|0|0|1
+||0|1|0|0|0|0|1
+||0|0|1|0|0|0|1
+||0|0|0|1|0|0|1
+||0|0|0|0|1|0|1
+||0|0|0|0|0|1|1
+||0|0|0|0|0|0|0</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+	</sections>
+			</section>
+	</sections>
+			</section>
+	</sections>
+</suite>
