@@ -902,6 +902,460 @@ Else send data to server and show message to user &quot;Готово&quot;
 							</section>
 	</sections>
 			</section>
+			<section>
+		<name>Unfunctional</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Failover and Recovery</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Incorrect field filling</name>
+		<description>Test validation after a series of errors</description>
+						
+		<cases>
+									
+						<case>
+				<id>C79</id>
+				<title>&quot;Ваш город или регион&quot;</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Validation of field [C8]
+Appearance of hint [C6]</preconds>
+										<steps_separated><step>
+<index>1</index><content>Click on the field </content><expected>Appearance of cursor</expected></step>
+<step>
+<index>2</index><content>Input incorrect data into the field</content><expected>Appearance of the hint &quot;Incorrect data&quot;</expected></step>
+<step>
+<index>3</index><content>Clearing the field </content><expected>Hint &quot;Incorrect data disappear</expected></step>
+<step>
+<index>4</index><content>Input correct data into the field</content><expected>Appearance of hint &quot;Correct data&quot;</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C80</id>
+				<title>&quot;Фамилия, имя и отчество&quot;</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Validation of field  - minimum words number[19], incorrect symbols[C20]
+Appearance of hint - minimum words number[21], incorrect symbols[C16]</preconds>
+										<steps_separated><step>
+<index>1</index><content>Click on the field </content><expected>Appearance of cursor</expected></step>
+<step>
+<index>2</index><content>Input incorrect symbols into the field</content><expected>Appearance of the hint &quot;Incorrect symbols&quot;</expected></step>
+<step>
+<index>3</index><content>Clearing the field </content><expected>Hint &quot;Incorrect symbols&quot; disappear</expected></step>
+<step>
+<index>4</index><content>Input iinsuficent number of words (2) into the field</content><expected>Appearance of the hint &quot;Insuficent number&quot; of words&quot;</expected></step>
+<step>
+<index>5</index><content>Clearing the field </content><expected>Hint &quot;Insuficent number&quot; disappear</expected></step>
+<step>
+<index>6</index><content>Input correct data into the field</content><expected>Appearance of hint &quot;Correct data&quot;</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C81</id>
+				<title>&quot;Контактный телефон&quot;</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Validation of field  - first input numeric[C27],  length of input number[C22],[C26]
+Appearance of hint - incorrect first numeric[C33],invalid number[C29], empty field[C28]</preconds>
+										<steps_separated><step>
+<index>1</index><content>Click on the field </content><expected>Appearance of cursor</expected></step>
+<step>
+<index>2</index><content>Input incorrect first numeric into the field</content><expected>Appearance of the hint &quot;Incorrect first numeric&quot;</expected></step>
+<step>
+<index>3</index><content>Clear the field </content><expected>Hint &quot;Incorrect first numeric&quot; disappear</expected></step>
+<step>
+<index>4</index><content>Input less numbers than in valid phone number into the field</content><expected>Appearance of the hint &quot;Invalid number&quot;</expected></step>
+<step>
+<index>5</index><content>Clear the field </content><expected>Hint &quot;Invalid number&quot; disappear</expected></step>
+<step>
+<index>6</index><content>Click abroad the field or click Enter or click button &quot;Оставить заявку&quot;</content><expected>Appearance of the hint &quot;Empty field&quot; .</expected></step>
+<step>
+<index>7</index><content>Type something into the field </content><expected>Hint &quot;Empty field&quot; disappear</expected></step>
+<step>
+<index>8</index><content>Clear the field </content><expected></expected></step>
+<step>
+<index>9</index><content>Input correct data into the field</content><expected>Appearance of hint &quot;Correct data&quot;</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C82</id>
+				<title>&quot;Электронная почта&quot;</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Validation of field  - [C32]
+Appearance of hint - [C34]</preconds>
+										<steps_separated><step>
+<index>1</index><content>Click on the field </content><expected>Appearance of cursor</expected></step>
+<step>
+<index>2</index><content>Input incorrect symbols into the field</content><expected>Appearance of the hint &quot;Incorrect data&quot;</expected></step>
+<step>
+<index>3</index><content>Clearing the field </content><expected>Hint &quot;Incorrect data&quot; disappear</expected></step>
+<step>
+<index>4</index><content>Input correct data into the field</content><expected>Appearance of hint &quot;Correct data&quot;</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C83</id>
+				<title>&quot;Укажите страну&quot;</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Validation of field - [C39]
+Appearance of hint - incorrect data[C40], empty field[C41]</preconds>
+										<steps_separated><step>
+<index>1</index><content>Click on the field </content><expected>Appearance of cursor</expected></step>
+<step>
+<index>2</index><content>Ckick near the field or click Enter or click button &quot;Оставить заявку&quot;</content><expected>Appearance of the hint &quot;Empty field&quot;</expected></step>
+<step>
+<index>3</index><content>Clearing the field </content><expected>Hint  &quot;Empty field&quot; disappear</expected></step>
+<step>
+<index>4</index><content>Input incorrect data into the field</content><expected>Appearance of the hint &quot;Incorrect data&quot;</expected></step>
+<step>
+<index>5</index><content>Clearing the field </content><expected>Hint &quot;Incorrect data&quot; disappear</expected></step>
+<step>
+<index>6</index><content>Input correct data into the field</content><expected>Appearance of hint &quot;Correct data&quot;</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+	</sections>
+			</section>
+			<section>
+		<name>Security</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Data intercept</name>
+		<description>Ability to intercept user data and decrypt them</description>
+						
+		<cases>
+									
+						<case>
+				<id>C84</id>
+				<title>Connection intercept (Men in the middle attack)</title>
+												<template>Test Case (Steps)</template>
+																<type>Security</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Data in fields is valid
+Flag is true</preconds>
+										<steps_separated><step>
+<index>1</index><content>Click &quot;Отправить заявку&quot; кнопку</content><expected>Data sended to server throw our MIT</expected></step>
+<step>
+<index>2</index><content>Analyze data that MIT collect</content><expected>Data is secured and cannot be decrypted</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+	</sections>
+			</section>
+			<section>
+		<name>Usability</name>
+		<description>Imposition of elements on various devices and platforms</description>
+										<sections>
+		<section>
+		<name>Layout</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C87</id>
+				<title>Form layout on PC</title>
+												<template>Test Case (Steps)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>PC with wide screen (16:9 or more) 
+Chrome 72.0.3626.119</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open the order form in default zoom(100%)</content><expected>Form in the cite center, equal gaps between fields and window borders
+https://photos.app.goo.gl/kgBSvZhYinF6UmFG9</expected></step>
+<step>
+<index>2</index><content>Set zoom to 150%</content><expected>Form in the cite center, equal gaps between fields and window borders
+https://photos.app.goo.gl/2MEWJJbvK7UBFLiQ8</expected></step>
+<step>
+<index>3</index><content>Set zoom to 50%</content><expected>Form in the cite center, equal gaps between fields and window borders
+https://photos.app.goo.gl/A7oLhoj7qaxRyiMYA</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C89</id>
+				<title>Form layout on mobile</title>
+												<template>Test Case (Steps)</template>
+																<type>Usability</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Smatrphone with wide screen (16:9 or more) 
+Chrome 72.0.3626.119</preconds>
+										<steps_separated><step>
+<index>1</index><content>Open the order form in horizontal position</content><expected>Form in the cite center, equal gaps between fields and window borders
+https://photos.app.goo.gl/95jFu432DyRW59Ba8</expected></step>
+<step>
+<index>2</index><content>Set position to vertical</content><expected>Form in the cite center, equal gaps between fields and window borders
+https://photos.app.goo.gl/U7oNkgKUTtRQ1TCq7</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+								<sections>
+		<section>
+		<name>New elements appearance</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Hints</name>
+		<description>Useful tips for customers</description>
+										<sections>
+		<section>
+		<name>Correct field filling</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C90</id>
+				<title>&quot;Фамилия, имя и отчество&quot;</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Correct field filling</preconds>
+										<steps_separated><step>
+<index>1</index><content>Fill correct data into field</content><expected>Hint &quot;Correct field&quot; appearance in the field int the right corner
+https://photos.app.goo.gl/cNRSiXvdoYn4nYCa6 </expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C94</id>
+				<title>&quot;Контактный телефон&quot;</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Correct field filling</preconds>
+										<steps_separated><step>
+<index>1</index><content>Fill correct data into field</content><expected>Hint &quot;Correct field&quot; appearance in the field int the right corner
+https://photos.app.goo.gl/cNRSiXvdoYn4nYCa6 </expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C95</id>
+				<title>&quot;Почта&quot;</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Correct field filling</preconds>
+										<steps_separated><step>
+<index>1</index><content>Fill correct data into field</content><expected>Hint &quot;Correct field&quot; appearance in the field int the right corner
+https://photos.app.goo.gl/cNRSiXvdoYn4nYCa6 </expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C96</id>
+				<title>&quot;Укажите страну&quot;</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Appearance of the field
+Correct field filling</preconds>
+										<steps_separated><step>
+<index>1</index><content>Fill correct data into field</content><expected>Hint &quot;Correct field&quot; appearance in the field int the right corner
+https://photos.app.goo.gl/cNRSiXvdoYn4nYCa6 </expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Incorrect field filling</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C98</id>
+				<title>&quot;Фамилия, имя и отчество&quot;</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Field filling with invalid data</preconds>
+										<steps_separated><step>
+<index>1</index><content>Fill incorrect data into field</content><expected>Hint &quot;Incorrect data&quot; appearance below the field corner.
+Set field border color to red
+https://photos.app.goo.gl/L3cdmZSxMNqNByqV9</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C102</id>
+				<title>&quot;Контактный телефон&quot;</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Field filling with invalid data</preconds>
+										<steps_separated><step>
+<index>1</index><content>Fill incorrect data into field</content><expected>Hint &quot;Incorrect data&quot; appearance below the field corner.
+Set field border color to red
+https://photos.app.goo.gl/L3cdmZSxMNqNByqV9</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C103</id>
+				<title>&quot;Почта&quot;</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Field filling with invalid data</preconds>
+										<steps_separated><step>
+<index>1</index><content>Fill incorrect data into field</content><expected>Hint &quot;Incorrect data&quot; appearance below the field corner.
+Set field border color to red
+https://photos.app.goo.gl/L3cdmZSxMNqNByqV9</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+												
+						<case>
+				<id>C104</id>
+				<title>&quot;Укажите страну&quot;</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Field filling with invalid data</preconds>
+										<steps_separated><step>
+<index>1</index><content>Fill incorrect data into field</content><expected>Hint &quot;Incorrect data&quot; appearance below the field corner.
+Set field border color to red
+https://photos.app.goo.gl/L3cdmZSxMNqNByqV9</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+	</sections>
+			</section>
+			<section>
+		<name>Fields</name>
+		<description></description>
+						
+		<cases>
+									
+						<case>
+				<id>C97</id>
+				<title>&quot;Укажите страну&quot;</title>
+												<template>Test Case (Steps)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references> 
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Field &quot;Гражданство&quot; has a value &quot;Имею гражданство РФ&quot;</preconds>
+										<steps_separated><step>
+<index>1</index><content>Set field &quot;Гражданство&quot; value  &quot;Не имею российского гражданства&quot;
+https://photos.app.goo.gl/TVCjsGDdgjCiLQ6g7</content><expected>The field &quot;Укажите страну&quot; appears
+postcondition: appearance of list with variants											
+https://photos.app.goo.gl/bQPDtqHXuMjwj7rF9</expected></step>
+</steps_separated>
+									</custom>
+							</case>
+								</cases>
+							</section>
+	</sections>
+			</section>
+	</sections>
+			</section>
+	</sections>
+			</section>
+	</sections>
+			</section>
 	</sections>
 			</section>
 	</sections>
